@@ -24,7 +24,7 @@
   "engines": {
     "node": ">= 12.9.1",
     "npm": ">= 5.8.0",
-    "yarn": ">= 1.22.10"
+    "yarn": ">= 1.22.0"
   },
   "scripts": {
     "prebuild": "eslint lib/*.ts",
