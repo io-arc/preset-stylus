@@ -1,0 +1,71 @@
+// ===============================================
+// Responsive (iframe etc.)
+//
+// $child: Child class name or id
+// $left: e.g. 16
+// $right: e.g. 9
+// ===============================================
+responsive-view($child, $left, $right)
+  position: relative
+  width: 100%
+  padding-top: percentage(round($right / $left, 5))
+  {$child}
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+// ===============================================
+// placeholder
+// ===============================================
+placeholder-color($color)
+  &:placeholder-shown
+    color: $color
+  &::-webkit-input-placeholder
+    color: $color
+  &:-moz-placeholder
+    color: $color
+  &:-ms-input-placeholder
+    color: $color
+
+// ===============================================
+// Safe Area (iPhone X etc.)
+//
+// $type: top | right | bottom | left
+// ===============================================
+safe-area($type)
+  $t = unquote('safe-area-inset-' + $type)
+  padding-{$type}: constant($t)
+  padding-{$type}: env($t)
+
+// ===============================================
+// Configuration using vertical rhythm
+//
+// $level: multiple
+// $fZ: font size (px)
+// $lh: base of the line (px)
+// ===============================================
+vertical-rhythm($level = 1, $fz = 16, $lh = 26)
+  $size = $lh * $level
+  return round($size / $fz, 3)
+
+
+// ===============================================
+// Default font size
+// ===============================================
+default-font-size-large()
+  font-size: 1.6rem
+  font-weight: normal
+  line-height: vertical-rhythm(1, 16)
+
+default-font-size-medium()
+  font-size: 1.5rem
+  font-weight: normal
+  line-height: vertical-rhythm(1, 15)
+
+default-font-size-small()
+  font-size: 1.4rem
+  font-weight: normal
+  line-height: vertical-rhythm(1, 14, 24)
+
