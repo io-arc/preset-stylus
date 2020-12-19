@@ -55,7 +55,7 @@ figure.bar
   background-images('../img/foo.png')
 ```
 
-Result:
+Compile to:
 
 ```css
 figure.bar {
