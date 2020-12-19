@@ -1,4 +1,4 @@
-# [mixin] Background Image
+# Images
 
 Automatically generates background-image associations for each viewport.  
 It is assumed to display only images using the background in figure tag, etc.

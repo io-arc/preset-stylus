@@ -1,3 +1,3 @@
 # preset-stylus
 
-[background-images](docs/background-images.md)
+[Usage image](docs/usage-image.md)
