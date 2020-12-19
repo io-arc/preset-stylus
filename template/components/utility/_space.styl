@@ -1,0 +1,47 @@
+@require "../../assets/const/_space.styl"
+@require "../../assets/const/_media-query.styl"
+
+_space-setup($prefix, $property, $n = 24)
+  {$prefix}-0
+  {$property}: 0
+  for i in (1..$n)
+    {$prefix}-{i}
+      {$property}: $spacer * i
+
+_space-setup('.ma', 'margin')
+_space-setup('.mt', 'margin-top')
+_space-setup('.mb', 'margin-bottom')
+_space-setup('.ml', 'margin-left')
+_space-setup('.mr', 'margin-right')
+
+_space-setup('.pa', 'padding')
+_space-setup('.pt', 'padding-top')
+_space-setup('.pb', 'padding-bottom')
+_space-setup('.pl', 'padding-left')
+_space-setup('.pr', 'padding-right')
+
+@media $mq-medium
+  _space-setup('.m-ma', 'margin')
+  _space-setup('.m-mt', 'margin-top')
+  _space-setup('.m-mb', 'margin-bottom')
+  _space-setup('.m-ml', 'margin-left')
+  _space-setup('.m-mr', 'margin-right')
+
+  _space-setup('.m-pa', 'padding')
+  _space-setup('.m-pt', 'padding-top')
+  _space-setup('.m-pb', 'padding-bottom')
+  _space-setup('.m-pl', 'padding-left')
+  _space-setup('.m-pr', 'padding-right')
+
+@media $mq-small
+  _space-setup('.s-ma', 'margin')
+  _space-setup('.s-mt', 'margin-top')
+  _space-setup('.s-mb', 'margin-bottom')
+  _space-setup('.s-ml', 'margin-left')
+  _space-setup('.s-mr', 'margin-right')
+
+  _space-setup('.s-pa', 'padding')
+  _space-setup('.s-pt', 'padding-top')
+  _space-setup('.s-pb', 'padding-bottom')
+  _space-setup('.s-pl', 'padding-left')
+  _space-setup('.s-pr', 'padding-right')
