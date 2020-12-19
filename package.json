@@ -6,7 +6,7 @@
   "main": "",
   "files": [
     "bin",
-    "templates"
+    "template"
   ],
   "homepage": "https://github.com/io-arc/preset-stylus#readme",
   "repository": {
