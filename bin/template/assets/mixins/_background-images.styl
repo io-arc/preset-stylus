@@ -62,8 +62,8 @@ bg($target, $suffix = '')
 // ===============================================
 bg-retina($target, $suffix = '', $retina = $image-retina-suffix)
   $base = image-file-path($target, $suffix)
-  $w = image-width($path)
-  $h = image-height($path)
+  $w = image-width($base)
+  $h = image-height($base)
   $actual = image-file-path($target, $suffix + $retina)
   background-size: $w $h
   background-image: url($actual)
