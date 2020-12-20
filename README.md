@@ -21,6 +21,16 @@ $ cd <project>/src/css
 $ preset-stylus
 ```
 
+By default, if a file with the same name exists, it will be skipped.  
+The following parameter will delete and overwrite the existing file with the same name.
+
+```shell
+# overwrite the file
+$ preset-stylus --overwrite
+# or
+$ preset-stylus -o
+```
+
 ## Utility classes
 
 ### margin, padding

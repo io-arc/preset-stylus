@@ -25,7 +25,7 @@ Copyright (c) ${pkg.year} ${pkg.author}
 */`
   },
 
-  external: ['update-notifier', 'commander'],
+  external: ['update-notifier', 'commander', 'cpx', 'kleur'],
 
   plugins: [
     nodeResolve(),
