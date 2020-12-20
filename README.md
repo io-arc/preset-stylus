@@ -1,8 +1,29 @@
 # preset-stylus
 
-# Utility classes
+Assets preset for stylus.
 
-## margin, padding
+## Install
+
+```shell
+$ npm i -g @io-arc/preset-stylus
+
+# yarn
+$ yarn global add @io-arc/preset-stylus
+```
+
+## Usage
+
+Just type a command in the directory where you want to expansion.  
+If you want to extract into `<project>/src/css`.
+
+```shell
+$ cd <project>/src/css
+$ preset-stylus
+```
+
+## Utility classes
+
+### margin, padding
 
 File: [components/utility/\_space.styl](template/components/utility/_space.styl)
 
@@ -18,7 +39,7 @@ Example `$spacer` is `4px`.
 `.ma-0` is `margin: 0;`.  
 `.ma-1` is `margin: 4px;`
 
-### Default
+#### Default
 
 | classes   | property         |
 | --------- | ---------------- |
@@ -33,7 +54,7 @@ Example `$spacer` is `4px`.
 | `.pl-{n}` | `padding-left`   |
 | `.pr-{n}` | `padding-right`  |
 
-### Medium viewport
+#### Medium viewport
 
 | classes     | property         |
 | ----------- | ---------------- |
@@ -49,7 +70,7 @@ Example `$spacer` is `4px`.
 | `.m-pl-{n}` | `padding-left`   |
 | `.m-pr-{n}` | `padding-right`  |
 
-### Small viewport
+#### Small viewport
 
 | classes     | property         |
 | ----------- | ---------------- |
