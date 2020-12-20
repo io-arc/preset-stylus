@@ -1,7 +1,7 @@
 {
   "name": "@io-arc/preset-stylus",
   "description": "Create a preset of stylus with cli",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "year": "2020",
   "main": "",
   "files": [

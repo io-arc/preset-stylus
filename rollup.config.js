@@ -15,12 +15,13 @@ export default {
     sourcemap: false,
     banner: `#!/usr/bin/env node
 /*!
-io-arc - preset-stylus
+@io-arc/preset-stylus
 ${pkg.description}
 
-${pkg.homepage}
 Version: ${pkg.version}
 License: ${pkg.license}
+Document: ${pkg.homepage}
+
 Copyright (c) ${pkg.year} ${pkg.author}
 */`
   },
