@@ -25,7 +25,7 @@ $ preset-stylus
 
 ### margin, padding
 
-File: [components/utility/\_space.styl](template/components/utility/_space.styl)
+File: [components/utility/\_space.styl](bin/template/components/utility/_space.styl)
 
 Margin and padding classes.  
 `.ma-{n}`, `.mt-{n}` ...
@@ -33,7 +33,7 @@ Margin and padding classes.
 `{n}` is `0` to `24`.  
 Calculate the radix multiplied by `$spacer`.
 
-`$spacer` is [assets/const/\_space.styl](template/assets/const/_space.styl).
+`$spacer` is [assets/const/\_space.styl](bin/template/assets/const/_space.styl).
 
 Example `$spacer` is `4px`.  
 `.ma-0` is `margin: 0;`.  

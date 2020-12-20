@@ -5,7 +5,7 @@ It is assumed to display only images using the background in figure tag, etc.
 
 ## Variables
 
-File: [assets/const/\_image.styl](../template/assets/const/_image.styl)
+File: [assets/const/\_image.styl](bin/template/assets/const/_image.styl)
 
 | variable               | description                      |
 | ---------------------- | -------------------------------- |
@@ -40,7 +40,7 @@ $image-suffix-pipe = '_'
 
 ## Mixins
 
-File: [assets/mixins/\_background-images.styl](../template/assets/mixins/_background-images.styl)
+File: [assets/mixins/\_background-images.styl](../bin/template/assets/mixins/_background-images.styl)
 
 ### `background-images($target)`
 

@@ -1,10 +1,10 @@
 # Mixins
 
-[Here](docs/usage-image.md) for image relations.
+[Here](usage-image.md) for image relations.
 
 ## `responsive-view($child, $left, $right)`
 
-File: [assets/mixins/\_chore.styl](template/assets/mixins/_chore.styl)
+File: [assets/mixins/\_chore.styl](../bin/template/assets/mixins/_chore.styl)
 
 Make inline frames such as YouTube responsive.
 
@@ -39,7 +39,7 @@ Compile to:
 
 ## `placeholder-color($color)`
 
-File: [assets/mixins/\_chore.styl](template/assets/mixins/_chore.styl)
+File: [assets/mixins/\_chore.styl](../bin/template/assets/mixins/_chore.styl)
 
 Placeholder color in the input tag.
 
@@ -49,7 +49,7 @@ Placeholder color in the input tag.
 
 ## `safe-area($type)`
 
-File: [assets/mixins/\_chore.styl](template/assets/mixins/_chore.styl)
+File: [assets/mixins/\_chore.styl](../bin/template/assets/mixins/_chore.styl)
 
 Safe area settings for iPhone X, etc.
 
@@ -73,7 +73,7 @@ Compile to:
 
 ## `vertical-rythum($level, $fz, $lh)`
 
-File: [assets/mixins/\_chore.styl](template/assets/mixins/_chore.styl)
+File: [assets/mixins/\_chore.styl](../bin/template/assets/mixins/_chore.styl)
 
 Configuration using vertical rhythm.
 
@@ -98,6 +98,6 @@ Compile to:
 
 ## `default-font-size-large()`, `default-font-size-medium()`, `default-font-size-small()`
 
-File: [assets/mixins/\_chore.styl](template/assets/mixins/_chore.styl)
+File: [assets/mixins/\_chore.styl](../bin/template/assets/mixins/_chore.styl)
 
 Default settings for font size and line-height.

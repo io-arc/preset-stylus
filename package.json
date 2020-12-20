@@ -5,8 +5,7 @@
   "year": "2020",
   "main": "",
   "files": [
-    "bin",
-    "template"
+    "bin"
   ],
   "homepage": "https://github.com/io-arc/preset-stylus#readme",
   "repository": {
