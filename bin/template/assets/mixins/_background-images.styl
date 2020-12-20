@@ -1,0 +1,91 @@
+@require "../const/_media-query.styl"
+@require "../const/_image.styl"
+
+// ===============================================
+// Image path
+//
+// $target: filepath
+// $suffix: add suffix to $target
+//
+// e.g.
+// image-file-path('../img/icon.png', 'large')
+//   => '../img/icon_large.png'
+// ===============================================
+image-file-path($target, $suffix = '')
+  unless $suffix
+    return $target
+
+  $dir = dirname($target)
+  $ext = extname($target)
+  $file = basename($target, $ext)
+
+  return pathjoin($dir, $file + $image-suffix-pipe + $suffix + $ext)
+
+// ===============================================
+// Image width
+//
+// $path = image file path
+// ===============================================
+image-width($path)
+  return image-size($path)[0]
+
+// ===============================================
+// Image height
+//
+// $path = image file path
+// ===============================================
+image-height($path)
+  return image-size($path)[1]
+
+// ===============================================
+// Single background image
+//
+// $target: filepath
+// $suffix: add suffix to $target
+// ===============================================
+bg($target, $suffix = '')
+  $path = image-file-path($target, $suffix)
+  $w = image-width($path)
+  $h = image-height($path)
+  background-repeat: no-repeat
+  width: $w
+  height: $h
+  background-size: @width @height
+  background-image: url($path)
+
+// ===============================================
+// Single background image for retina
+//
+// $target: filepath
+// $suffix: add suffix to $target
+// $retina: retina file suffix
+// ===============================================
+bg-retina($target, $suffix = '', $retina = $image-retina-suffix)
+  $base = image-file-path($target, $suffix)
+  $w = image-width($base)
+  $h = image-height($base)
+  $actual = image-file-path($target, $suffix + $retina)
+  background-size: $w $h
+  background-image: url($actual)
+
+
+// ===============================================
+// Batch specification including each viewport
+//
+// $target: filepath
+// $suffix: add suffix to $target
+// $retina: retina file suffix
+// ===============================================
+background-images($target)
+  bg($target, $image-large-suffix)
+  @media $mq-retina-large
+    bg-retina($target, $image-large-suffix, $image-retina-suffix)
+  @media $mq-medium
+    bg($target, $image-medium-suffix)
+  @media $mq-retina-medium
+    bg-retina($target, $image-medium-suffix, $image-retina-suffix)
+  @media $mq-small
+    bg($target, $image-small-suffix)
+  @media $mq-retina-small
+    bg-retina($target, $image-small-suffix, $image-retina-suffix)
+

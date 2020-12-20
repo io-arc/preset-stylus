@@ -1,0 +1,74 @@
+@charset "UTF-8"
+@require "assets/_init.styl"
+
+// *********** Reset *********** //
+html
+  font-size: 10px
+  vertical-align: text-bottom
+  @media $mq-medium
+    min-height: 1px
+  @media $mq-small
+    min-height: 1px
+
+body
+  margin: 0
+  padding: 0
+  color: $color-text-primary-base
+  font-family: $font-default
+  default-font-size-large()
+  -webkit-font-smoothing: subpixel-antialiased
+  -moz-osx-font-smoothing: grayscale
+  //text-rendering: optimizeLegibility
+  -webkit-text-size-adjust: 100%
+  vertical-align: bottom
+  @media $mq-medium
+    default-font-size-medium()
+  @media $mq-small
+    default-font-size-small()
+
+figure
+  margin: 0
+  padding: 0
+
+h1
+h2
+h3
+h4
+h5
+h6
+  padding: 0
+  margin: 0
+
+p
+  margin-top: 0
+
+img
+  vertical-align: bottom
+  max-width: 100%
+  height: auto
+
+code
+  font-family: $_f_code
+  font-weight: normal
+
+a
+  &:link
+  &:visited
+    color: $color-link
+    text-decoration: none
+  &:hover
+    color: $color-link-hover
+    text-decoration: underline
+  &:active
+    color: $color-link
+    text-decoration: none
+
+input
+button
+textarea
+  font-family: $font-default
+
+// *********** Components *********** //
+@require "components/utility/_chore.styl"
+@require "components/utility/_space.styl"
+@require "components/utility/_typography.styl"
