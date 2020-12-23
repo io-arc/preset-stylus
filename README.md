@@ -31,6 +31,11 @@ $ preset-stylus --overwrite
 $ preset-stylus -o
 ```
 
+## Variables
+
+Create a variable file by purpose.  
+[assets/const/\_xxx.styl](bin/template/assets/const).
+
 ## Utility classes
 
 ### margin, padding
@@ -98,4 +103,4 @@ Example `$spacer` is `4px`.
 
 ## Mixins
 
-[Document](docs/mixins.md).
+See [document](docs/mixins.md).
