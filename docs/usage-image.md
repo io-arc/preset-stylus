@@ -148,4 +148,7 @@ Add a suffix to the specified file name.
 ```stylus
 $img = image-file-path('../img/logo.png', 'large')
 // -> '../img/logo_large.png'
+
+$img2 = image-file-path('../img/logo.png')
+// -> '../img/logo.png'
 ```
