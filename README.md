@@ -203,6 +203,6 @@ File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
 
 Default settings for font size and line-height.
 
-### Others
+## Others
 
 - [Images operation](docs/usage-image.md)
