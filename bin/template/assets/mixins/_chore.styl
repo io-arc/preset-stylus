@@ -46,26 +46,29 @@ safe-area($type)
 // $fZ: font size (px)
 // $lh: base of the line (px)
 // ===============================================
-vertical-rhythm($level = 1, $fz = 16, $lh = 26)
+vertical-rhythm($level = 1, $fz = 16, $lh = 24)
   $size = $lh * $level
   return round($size / $fz, 3)
+
+vertical-rhythm-small($level = 1, $fz = 14, $lh = 20)
+  return vertical-rhythm($level, $fz, $lh)
 
 
 // ===============================================
 // Default font size
 // ===============================================
 default-font-size-large()
-  font-size: 1.6rem
+  font-size: 16px
   font-weight: normal
   line-height: vertical-rhythm(1, 16)
 
 default-font-size-medium()
-  font-size: 1.5rem
+  font-size: 15px
   font-weight: normal
   line-height: vertical-rhythm(1, 15)
 
 default-font-size-small()
-  font-size: 1.4rem
+  font-size: 14px
   font-weight: normal
-  line-height: vertical-rhythm(1, 14, 24)
+  line-height: vertical-rhythm-small(1, 14)
 
