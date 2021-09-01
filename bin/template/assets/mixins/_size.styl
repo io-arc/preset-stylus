@@ -1,0 +1,79 @@
+@require "../const/_chore.styl"
+@require "../const/_media-query.styl"
+
+// ===============================================
+// Size range formula (font-size, padding, margin etc.)
+//
+// $min: number | string (px,em,rem etc.)
+// $max: number | string (px,em,rem etc.)
+// $min-media-query: number | string (px,em,rem etc.)
+// $max-media-query: number | string (px,em,rem etc.)
+// ===============================================
+size-range($min, $max, $min-media-query, $max-media-query)
+  return s('%s + ((1vw - %s) * %s)', round(unit($min / $html-base-font-size, 'rem'), 4), $min-media-query / 100, round(unit(100 * ($max - $min) / ($max-media-query - $min-media-query), ''), 4))
+  // Longhand
+  // return s('%s + %s * ((100vw - %s) / %s)', unit($html-base-font-size / $max, 'rem'), unit($max - $min, ''), $min-media-query, unit($max-media-query - $min-media-query, '')
+
+// ===============================================
+// Size range formula for large (font-size, padding, margin etc.)
+//
+// $min: number | string (px,em,rem etc.)
+// $max: number | string (px,em,rem etc.)
+// ===============================================
+large-size-range($min, $max)
+  return size-range($min, $max, $breakpoint-medium, $breakpoint-xlarge)
+
+// ===============================================
+// Size range formula for medium (font-size, padding, margin etc.)
+//
+// $min: number | string (px,em,rem etc.)
+// $max: number | string (px,em,rem etc.)
+// ===============================================
+medium-size-range($min, $max)
+  return size-range($min, $max, $breakpoint-small, $breakpoint-medium)
+
+// ===============================================
+// Size range formula for small (font-size, padding, margin etc.)
+//
+// $min: number | string (px,em,rem etc.)
+// $max: number | string (px,em,rem etc.)
+// ===============================================
+small-size-range($min, $max)
+  return size-range($min, $max, $breakpoint-xsmall, $breakpoint-small)
+
+
+// ===============================================
+// Range of large size value (font-size, padding, margin etc.)
+// Not available for IE
+//
+// $min: number | string (px,em,rem etc.)
+// $max: number | string (px,em,rem etc.)
+// ===============================================
+min-max-large-size($min, $max)
+  return s('clamp(%s, %s, %s)', $min, large-size-range($min, $max), $max)
+  // if you're using IE
+  // return s('calc(%s)', large-size-range($min, $max))
+
+// ===============================================
+// Range of medium size value (font-size, padding, margin etc.)
+// Not available for IE
+//
+// $min: number | string (px,em,rem etc.)
+// $max: number | string (px,em,rem etc.)
+// ===============================================
+min-max-medium-size($min, $max)
+  return s('clamp(%s, %s, %s)', $min, medium-size-range($min, $max), $max)
+  // if you're using IE
+  // return s('calc(%s)', medium-size-range($min, $max))
+
+// ===============================================
+// Range of small size value (font-size, padding, margin etc.)
+// Not available for IE
+//
+// $min: number | string (px,em,rem etc.)
+// $max: number | string (px,em,rem etc.)
+// ===============================================
+min-max-small-size($min, $max)
+  return s('clamp(%s, %s, %s)', $min, small-size-range($min, $max), $max)
+  // if you're using IE
+  // return s('calc(%s)', small-size-range($min, $max))
