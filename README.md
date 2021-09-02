@@ -197,11 +197,46 @@ Compile to:
 }
 ```
 
+### `line-height-crop($lh)`
+
+Cut off the top and bottom margins of the line-height.
+
+| params | type                 | description       |
+| ------ | -------------------- | ----------------- |
+| `$lh`  | `number` or `string` | line-height value |
+
+File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
+
 ### `default-font-size-large()`, `default-font-size-medium()`, `default-font-size-small()`
 
 File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
 
 Default settings for font size and line-height.
+
+### `min-max-large-size($min, $max)`, `min-max-medium-size($min, $max)`, `min-max-small-size($min, $max)`
+
+Range of size value (font-size, padding, margin etc.)  
+\* Using `clamp` that not available for IE
+
+| params   | type     | description           |
+| -------- | ------   | --------------------- |
+| `$min`   | `string` | min size              |
+| `$max`   | `string` | max size              |
+
+```stylus
+.size
+  font-size: min-max-large-size(12px, 20px)
+```
+
+Compile to:
+
+```css
+.size {
+  font-size: clamp(14px, 0.875rem + ((1vw - 7.56px) * 1.2821), 18px);
+}
+```
+
+File: [assets/mixins/\_size.styl](bin/template/assets/mixins/_size.styl)
 
 ## Others
 
