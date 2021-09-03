@@ -201,9 +201,63 @@ Compile to:
 
 Cut off the top and bottom margins of the line-height.
 
-| params | type                 | description       |
-| ------ | -------------------- | ----------------- |
-| `$lh`  | `number` or `string` | line-height value |
+| params | type     | description       |
+| ------ | -------- | ----------------- |
+| `$lh`  | `number` | line-height value |
+
+```stylus
+.foo
+  font-size: 20px
+  line-height: 1.5
+  line-height-crop(1.5)
+
+.bar
+  font-size: 20px
+  line-height: 30px
+  line-height-crop(30 / 20)
+```
+
+Compile to:
+
+```css
+.foo {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.foo::before {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-top: calc((1 - 1.5) * 0.5em);
+}
+.foo::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-bottom: calc((1 - 1.5) * 0.5em);
+}
+
+.bar {
+  font-size: 20px;
+  line-height: 30px;
+}
+.bar::before {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-top: calc((1 - 1.5) * 0.5em);
+}
+.bar::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-bottom: calc((1 - 1.5) * 0.5em);
+}
+```
 
 File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
 
