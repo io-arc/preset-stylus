@@ -199,6 +199,8 @@ Compile to:
 
 ### `line-height-crop($lh)`
 
+File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
+
 Cut off the top and bottom margins of the line-height.
 
 | params | type     | description       |
@@ -258,8 +260,6 @@ Compile to:
   margin-bottom: calc((1 - 1.5) * 0.5em);
 }
 ```
-
-File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
 
 ### `default-font-size-large()`, `default-font-size-medium()`, `default-font-size-small()`
 
