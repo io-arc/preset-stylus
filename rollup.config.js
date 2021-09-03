@@ -22,7 +22,7 @@ Version: ${pkg.version}
 License: ${pkg.license}
 Document: ${pkg.homepage}
 
-Copyright (c) ${pkg.year} ${pkg.author}
+Copyright (c) 2020-${pkg.year} ${pkg.author}
 */`
   },
 

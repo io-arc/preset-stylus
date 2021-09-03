@@ -53,6 +53,35 @@ vertical-rhythm($level = 1, $fz = 16, $lh = 24)
 vertical-rhythm-small($level = 1, $fz = 14, $lh = 20)
   return vertical-rhythm($level, $fz, $lh)
 
+// ===============================================
+// Line height crop
+//
+// e.g.
+// .foo
+//   font-size: 20px
+//   line-height: 1.5
+//   line-height-crop(1.5)
+//
+// .bar
+//   font-size: 20px
+//   line-height: 30px
+//   line-height-crop(30 / 20)
+//
+// $lh: line-height
+// ===============================================
+line-height-crop($lh)
+  &::before
+    display: block;
+    content: ''
+    width: 0
+    height: 0
+    margin-top: s('calc((1 - %s) * 0.5em)', $lh)
+  &::after
+    display: block;
+    content: ''
+    width: 0
+    height: 0
+    margin-bottom: s('calc((1 - %s) * 0.5em)', $lh)
 
 // ===============================================
 // Default font size
@@ -71,4 +100,3 @@ default-font-size-small()
   font-size: 14px
   font-weight: normal
   line-height: vertical-rhythm-small(1, 14)
-

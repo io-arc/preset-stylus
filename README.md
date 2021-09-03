@@ -197,11 +197,100 @@ Compile to:
 }
 ```
 
+### `line-height-crop($lh)`
+
+File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
+
+Cut off the top and bottom margins of the line-height.
+
+| params | type     | description       |
+| ------ | -------- | ----------------- |
+| `$lh`  | `number` | line-height value |
+
+```stylus
+.foo
+  font-size: 20px
+  line-height: 1.5
+  line-height-crop(1.5)
+
+.bar
+  font-size: 20px
+  line-height: 30px
+  line-height-crop(30 / 20)
+```
+
+Compile to:
+
+```css
+.foo {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.foo::before {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-top: calc((1 - 1.5) * 0.5em);
+}
+.foo::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-bottom: calc((1 - 1.5) * 0.5em);
+}
+
+.bar {
+  font-size: 20px;
+  line-height: 30px;
+}
+.bar::before {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-top: calc((1 - 1.5) * 0.5em);
+}
+.bar::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-bottom: calc((1 - 1.5) * 0.5em);
+}
+```
+
 ### `default-font-size-large()`, `default-font-size-medium()`, `default-font-size-small()`
 
 File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
 
 Default settings for font size and line-height.
+
+### `min-max-large-size($min, $max)`, `min-max-medium-size($min, $max)`, `min-max-small-size($min, $max)`
+
+Range of size value (font-size, padding, margin etc.)  
+\* Using `clamp` that not available for IE
+
+| params   | type     | description           |
+| -------- | ------   | --------------------- |
+| `$min`   | `string` | min size              |
+| `$max`   | `string` | max size              |
+
+```stylus
+.size
+  font-size: min-max-large-size(12px, 20px)
+```
+
+Compile to:
+
+```css
+.size {
+  font-size: clamp(14px, 0.875rem + ((1vw - 7.56px) * 1.2821), 18px);
+}
+```
+
+File: [assets/mixins/\_size.styl](bin/template/assets/mixins/_size.styl)
 
 ## Others
 
