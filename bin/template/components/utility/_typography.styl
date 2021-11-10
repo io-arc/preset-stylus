@@ -2,8 +2,12 @@
 
 .typography
   &-copy
-    default-font-size-large()
+    font-size: $font-size-large-base
+    font-weight: normal
+    line-height: vertical-rhythm(1, unit($font-size-large-base, ''))
     @media $mq-medium
-      default-font-size-medium()
+      font-size: $font-size-medium-base
+      line-height: vertical-rhythm(1, unit($font-size-medium-base, ''))
     @media $mq-small
-      default-font-size-small()
+      font-size: $font-size-small-base
+      line-height: vertical-rhythm-small(1, unit($font-size-small-base, ''))

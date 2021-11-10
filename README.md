@@ -261,12 +261,6 @@ Compile to:
 }
 ```
 
-### `default-font-size-large()`, `default-font-size-medium()`, `default-font-size-small()`
-
-File: [assets/mixins/\_chore.styl](bin/template/assets/mixins/_chore.styl)
-
-Default settings for font size and line-height.
-
 ### `min-max-large-size($min, $max)`, `min-max-medium-size($min, $max)`, `min-max-small-size($min, $max)`
 
 Range of size value (font-size, padding, margin etc.)  
