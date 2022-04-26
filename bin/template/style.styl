@@ -55,6 +55,7 @@ a
   &:hover
     color: $color-link-hover
     text-decoration: underline
+
   &:active
     color: $color-link
     text-decoration: none
@@ -63,6 +64,9 @@ input
 button
 textarea
   font-family: $font-default
+
+:where(:root)
+  cursor: inherit
 
 // *********** Components *********** //
 @require "components/utility/_chore.styl"
