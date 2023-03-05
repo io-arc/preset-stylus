@@ -75,5 +75,51 @@ min-max-medium-size($min, $max)
 // ===============================================
 min-max-small-size($min, $max)
   return s('clamp(%s, %s, %s)', $min, small-size-range($min, $max), $max)
-  // if you're using IE
-  // return s('calc(%s)', small-size-range($min, $max))
+
+// if you're using IE
+// return s('calc(%s)', small-size-range($min, $max))
+
+// ===============================================
+// Range of large auto size value (font-size, padding, margin etc.)
+// Not available for IE
+// ===============================================
+min-max-large-auto-size($max, $ratio = 0.6)
+  $min = round($max * $ratio)
+  return min-max-large-size($min, $max)
+
+// ===============================================
+// Range of medium auto size value (font-size, padding, margin etc.)
+// Not available for IE
+// ===============================================
+min-max-medium-auto-size($max, $ratio = 0.6)
+  $min = round($max * $ratio)
+  return min-max-medium-size($min, $max)
+
+// ===============================================
+// Range of small auto size value (font-size, padding, margin etc.)
+// Not available for IE
+// ===============================================
+min-max-small-auto-size($max, $ratio = 0.6)
+  $min = round($max * $ratio)
+  return min-max-small-size($min, $max)
+
+// ===============================================
+// Calc of large vw
+// $size: number
+// ===============================================
+large-vw($size)
+  return ($size / unit($breakpoint-xlarge, '')) * 100vw
+
+// ===============================================
+// Calc of medium vw
+// $size: number
+// ===============================================
+medium-vw($size)
+  return ($size / unit($breakpoint-medium, '')) * 100vw
+
+// ===============================================
+// Calc of small vw
+// $size: number
+// ===============================================
+small-vw($size)
+  return ($size / unit($breakpoint-small, '')) * 100vw
