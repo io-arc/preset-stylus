@@ -38,6 +38,37 @@ image-height($path)
   return image-size($path)[1]
 
 // ===============================================
+// calc of aspect ratio
+//
+// $w: width number (not unit)
+// $h: height number (not unit)
+// ===============================================
+gcd($w, $h)
+  if $h == 0
+    return $w
+  return gcd($h, $w % $h)
+
+// ===============================================
+// Image information
+//
+// $path: image relative path
+// ===============================================
+image-information($path)
+  $w = image-width($path)
+  $h = image-height($path)
+  $gcd = gcd(unit($w, ''), unit($h, ''))
+  $l = floor(unit($w, '') / $gcd)
+  $r = floor(unit($h, '') / $gcd)
+
+  return {
+    width: $w
+    height: $h
+    ratio: $l \/ $r
+    ratioLeft: $l
+    ratioRight: $r
+  }
+
+// ===============================================
 // Single background image
 //
 // $target: filepath
@@ -68,7 +99,6 @@ bg-retina($target, $suffix = '', $retina = $image-retina-suffix)
   background-size: $w $h
   background-image: url($actual)
 
-
 // ===============================================
 // Batch specification including each viewport
 //
@@ -88,4 +118,3 @@ background-images($target)
     bg($target, $image-small-suffix)
   @media $mq-retina-small
     bg-retina($target, $image-small-suffix, $image-retina-suffix)
-
